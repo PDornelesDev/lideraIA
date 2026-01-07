@@ -8,6 +8,7 @@ import Features from './components/Features';
 import Benefits from './components/Benefits';
 import HowItWorks from './components/HowItWorks';
 import CTA from './components/CTA';
+import LoginSection from './components/LoginSection';
 import Footer from './components/Footer';
 
 function AppContent() {
@@ -25,6 +26,7 @@ function AppContent() {
       <Benefits />
       <HowItWorks />
       <CTA />
+      <LoginSection />
       <Footer />
     </div>
   );
