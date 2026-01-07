@@ -1,3 +1,7 @@
+import { AuthProvider } from './context/AuthContext';
+import { ProtectedRoute } from './components/ProtectedRoute';
+import { useAuth } from './context/AuthContext';
+import { Dashboard } from './pages/Dashboard';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
@@ -6,7 +10,13 @@ import HowItWorks from './components/HowItWorks';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 
-function App() {
+function AppContent() {
+  const { user } = useAuth();
+
+  if (user) {
+    return <Dashboard />;
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -17,6 +27,14 @@ function App() {
       <CTA />
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
   );
 }
 

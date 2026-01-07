@@ -24,8 +24,15 @@ export default function Navbar() {
             <a href="#como-funciona" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Como Funciona
             </a>
-            <button className="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-all shadow-md hover:shadow-lg font-medium">
-              Começar Agora
+            <button
+              onClick={() => {
+                const loginSection = document.querySelector('[data-login]');
+                if (loginSection) {
+                  loginSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-all shadow-md hover:shadow-lg font-medium">
+              Entrar
             </button>
           </div>
 
@@ -64,8 +71,15 @@ export default function Navbar() {
             >
               Como Funciona
             </a>
-            <button className="w-full bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-all shadow-md font-medium">
-              Começar Agora
+            <button
+              onClick={() => {
+                const loginSection = document.querySelector('[data-login]');
+                if (loginSection) {
+                  loginSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="w-full bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-all shadow-md font-medium">
+              Entrar
             </button>
           </div>
         </div>
